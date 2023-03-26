@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
-import HeroImg from "/Users/apple/Desktop/sharehub/assets/hero/hero_img.png";
-import Logo from "/Users/apple/Desktop/sharehub/assets/hero/logo.png";
+import HeroImg from "../../assets/hero/hero_img.png";
+
 const Hero = () => {
   return (
         <div className="min-h-screen flex dark:from-gray-900 bg-gradient-to-b from-white to-green-50">
