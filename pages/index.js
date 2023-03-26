@@ -5,6 +5,11 @@ import styles from "@/styles/Home.module.css";
 import Navbar from '../components/Navbar';
 import Hero from '../components/LandingPage/Hero.jsx'
 import GetStarted from '../components/LandingPage/GetStarted'
+import Footer from '../components/Footer'
+import FAQs from './../components/LandingPage/FAQs';
+import Stats from './../components/LandingPage/Stats';
+import AboutUs from './../components/LandingPage/AboutUs';
+import Login from '@/components/Login'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +22,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-    <Hero />
+      <Hero />
     <GetStarted />
+      <Stats />
+      <FAQs />
+      <Footer />
+     
+   
     </>
   );
 }
