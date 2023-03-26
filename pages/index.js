@@ -10,6 +10,7 @@ import FAQs from './../components/LandingPage/FAQs';
 import Stats from './../components/LandingPage/Stats';
 import AboutUs from './../components/LandingPage/AboutUs';
 import Login from '@/components/Login'
+import Dashboard from '@/components/Dashboard'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,15 +21,14 @@ export default function Home() {
         <title>Create Next App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+        </Head>
       <Navbar />
       <Hero />
-    <GetStarted />
+      <GetStarted id="getStarted" />
       <Stats />
       <FAQs />
-      <Footer />
-     
-   
-    </>
+      <Footer /> 
+    </>  
+  
   );
 }
