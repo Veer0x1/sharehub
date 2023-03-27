@@ -1,8 +1,19 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
+import { UserAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+  let router = useRouter();
+  const { logout, user } = UserAuth();
+  const handleSignIn = () => {
+    router.push("/register");
+  };
+  const handleProfileClick = () => {
+    router.push("/dashboard");
+  };
   return (
     <header>
       <input
@@ -76,25 +87,50 @@ const Navbar = () => {
                   </li>
                 </ul>
               </div>
-
-              <div className="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
-                <a
-                  href="#"
-                  className="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full focus:before:bg-primary/10 dark:focus:before:bg-primaryLight/10 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
-                >
-                  <span className="relative text-sm font-semibold text-primary dark:text-primaryLight">
-                    Sign Up
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primaryLight before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
-                >
-                  <span className="relative text-sm font-semibold text-white dark:text-gray-900">
-                    Login
-                  </span>
-                </a>
-              </div>
+              {user ? (
+                <div className="flex">
+                  <h2 className="block md:px-4 transition mt-1 text-error dark:text-warning dark:hover:text-primaryLight">
+                    {user.displayName.substring(
+                      0,
+                      user.displayName.indexOf(" ")
+                    )}
+                  </h2>
+                  <button onClick={handleProfileClick}>
+                    <Image
+                      className="w-8 h-8  rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                      src={user.photoURL}
+                      alt="Bordered avatar"
+                      width={400}
+                      height={400}
+                    />
+                  </button>
+                </div>
+              ) : (
+                <div className="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
+                  <a
+                    href="#"
+                    className="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full focus:before:bg-primary/10 dark:focus:before:bg-primaryLight/10 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+                  >
+                    <button
+                      onClick={handleSignIn}
+                      className="relative text-sm font-semibold text-primary hover:text-white dark:text-primaryLight"
+                    >
+                      Sign Up
+                    </button>
+                  </a>
+                  <a
+                    href="#"
+                    className="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primaryLight before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+                  >
+                    <button
+                      onClick={handleSignIn}
+                      className="relative text-sm font-semibold text-white dark:text-gray-900"
+                    >
+                      Login
+                    </button>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
