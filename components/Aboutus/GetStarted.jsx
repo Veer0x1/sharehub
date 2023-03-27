@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from '../../assets/hero/logo.png'
 
+import Link from 'next/link'
+
 const GetStarted = () => {
  
     return (
@@ -14,21 +16,21 @@ const GetStarted = () => {
           Be part of millions of people around the world using ShareHub in Finance and Trading.
         </p>
         <div className="flex flex-wrap justify-center gap-6 pt-4">
-          <a
-              href="#"
+          <Link
+              href="/register"
               className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-green-600 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
             >
               <span className="relative text-base font-semibold text-white dark:text-dark"
                 >Get Started</span >
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/"
               className="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
             >
               <span
                 className="relative text-base font-semibold text-primary dark:text-white"
                 >More about</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

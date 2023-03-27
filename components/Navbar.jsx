@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { UserAuth } from "../context/AuthContext";
+import Link from "next/link";
 
 const Navbar = () => {
   let router = useRouter();
@@ -28,14 +29,14 @@ const Navbar = () => {
         <div className="xl:container m-auto px-6 md:px-12 lg:px-6">
           <div className="flex flex-wrap items-center justify-between gap-6  md:gap-0 ">
             <div className="w-full items-center flex justify-between lg:w-auto">
-              <a className="relative z-10" href="#" aria-label="logo">
+              <Link className="relative z-10" href="/" aria-label="logo">
                 <Image
                   src={Logo}
                   className="bg-contain"
                   width={100}
                   alt="logo"
                 />
-              </a>
+              </Link>
               <label
                 htmlFor="hbr"
                 className="peer-checked:hamburger block relative z-20 p-6 -mr-6 cursor-pointer lg:hidden"
@@ -54,36 +55,41 @@ const Navbar = () => {
               <div className="text-gray-600 dark:text-gray-300 lg:pr-4">
                 <ul className="space-y-6 tracking-wide font-medium text-base lg:text-sm lg:flex lg:space-y-0">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/"
                       className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
                     >
                       <span>Home</span>
-                    </a>
+                    </Link>
                   </li>
+                  {user ? (
+                    <li>
+                      <Link
+                        href="#"
+                        className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
+                      >
+                        <span>Portfolio</span>
+                      </Link>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+
                   <li>
-                    <a
-                      href="#"
-                      className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
-                    >
-                      <span>Portfolio</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/services"
                       className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
                     >
                       <span>Services</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/about"
                       className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
                     >
                       <span>About</span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -6,7 +6,7 @@ import Aboutus from "../components/Aboutus/GetStarted";
 import Team from "../components/Aboutus/Team";
 import Footer from "../components/Footer";
 
-const about = () => {
+const About = () => {
   return (
     <>
       <Navbar />
