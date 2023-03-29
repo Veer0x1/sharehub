@@ -1,6 +1,13 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { doc, getDoc, setDoc, collection, set } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  set,
+  addDoc,
+} from "firebase/firestore";
 
 import {
   GoogleAuthProvider,
@@ -9,16 +16,18 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
- import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 import { auth, db } from "../utility/firebase";
 
 const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const router = useRouter();
-//   const [user, setUser] = useState({});
-const [user, setUser] = useAuthState(auth);
+  //   const [user, setUser] = useState({});
+  const [user, setUser] = useAuthState(auth);
   const [isLoggedIn, setIsLoggedIn] = useState(user?.displayName);
+
+
   const handleGoogleSignIn = async () => {
     try {
       const provider = new GoogleAuthProvider();
@@ -37,6 +46,31 @@ const [user, setUser] = useAuthState(auth);
     setIsLoggedIn(false);
     // setUser({});
   };
+
+  useEffect(() => {
+    if (user) {
+      const usersRef = collection(db, "user");
+      const query = doc(usersRef, user.uid);
+      getDoc(query).then((docSnapshot) => {
+        if (!docSnapshot.exists()) {
+          setDoc(query, { name: user.displayName, balance: 1000000 });
+        }
+      });
+    }
+  }, [user]);
+
+  return (
+    <AuthContext.Provider
+      value={{ handleGoogleSignIn, user, logout, isLoggedIn }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const UserAuth = () => {
+  return useContext(AuthContext);
+};
 
 //   const userRegistration = async (googleUser) => {
 //     if (user?.name) return;
@@ -73,17 +107,3 @@ const [user, setUser] = useAuthState(auth);
 //       unsubscribe();
 //     };
 //   }, []);
-
-  return (
-    <AuthContext.Provider
-      value={{ handleGoogleSignIn, user, logout, isLoggedIn }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
-};
-
-
-export const UserAuth = () => {
-    return useContext(AuthContext);
-  };

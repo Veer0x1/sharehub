@@ -6,6 +6,8 @@ import GetStarted from "../components/LandingPage/GetStarted";
 import Footer from "../components/Footer";
 import FAQs from "./../components/LandingPage/FAQs";
 import Stats from "./../components/LandingPage/Stats";
+import Map from "../components/Map";
+import Testimonials from "../components/LandingPage/About/Testimonials";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +24,7 @@ export default function Home() {
       <GetStarted />
       <Stats />
       <FAQs />
+      <Map />
       <Footer />
     </>
   );

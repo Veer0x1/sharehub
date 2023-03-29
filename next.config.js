@@ -3,7 +3,7 @@ require('dotenv').config()
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['lh3.googleusercontent.com',"https://img.icons8.com"],
+    domains: ['lh3.googleusercontent.com',"img.icons8.com",'source.unsplash.com'],
   },
   env:{
     FIREBASE_API_KEY:process.env.FIREBASE_API_KEY,

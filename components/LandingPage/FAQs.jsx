@@ -62,7 +62,7 @@ const FAQs = () => {
           <p className="mt-4 leading-relaxed text-gray-700">
             Mutual fund investors can withdraw their funds anytime they want to
             if they have invested in open-ended funds. You cannot do the same if
-            it's an ELSS mutual fund.
+            it&apos;s an ELSS mutual fund.
           </p>
         </details>
         <details className="group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">

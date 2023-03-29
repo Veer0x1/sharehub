@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from "next/image"
 
 const Testimonials = () => {
   return (
@@ -21,7 +22,7 @@ const Testimonials = () => {
 				</p>
 			</div>
 			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-violet-400 dark:text-gray-900">
-				<img src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-700" />
+				<Image src="https://source.unsplash.com/50x50/?portrait?1" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full  dark:bg-gray-700" />
 				<p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
 				<p className="text-sm uppercase">Aliquam illum</p>
 			</div>
@@ -40,7 +41,7 @@ const Testimonials = () => {
 				</p>
 			</div>
 			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-violet-400 dark:text-gray-900">
-				<img src="https://source.unsplash.com/50x50/?portrait?2" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-700" />
+				<Image src="https://source.unsplash.com/50x50/?portrait?2" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full  dark:bg-gray-700" />
 				<p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
 				<p className="text-sm uppercase">Aliquam illum</p>
 			</div>
@@ -59,7 +60,7 @@ const Testimonials = () => {
 				</p>
 			</div>
 			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-violet-400 dark:text-gray-900">
-				<img src="https://source.unsplash.com/50x50/?portrait?3" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-700" />
+				<Image src="https://source.unsplash.com/50x50/?portrait?3" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full  dark:bg-gray-700" />
 				<p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
 				<p className="text-sm uppercase">Aliquam illum</p>
 			</div>
@@ -78,7 +79,7 @@ const Testimonials = () => {
 				</p>
 			</div>
 			<div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-violet-400 dark:text-gray-900">
-				<img src="https://source.unsplash.com/50x50/?portrait?4" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500 dark:bg-gray-700" />
+				<Image src="https://source.unsplash.com/50x50/?portrait?4" alt="" className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-700" />
 				<p className="text-xl font-semibold leading-tight">Distinctio Animi</p>
 				<p className="text-sm uppercase">Aliquam illum</p>
 			</div>

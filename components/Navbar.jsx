@@ -65,7 +65,7 @@ const Navbar = () => {
                   {user ? (
                     <li>
                       <Link
-                        href="#"
+                        href="/dashboard"
                         className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
                       >
                         <span>Portfolio</span>

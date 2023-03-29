@@ -54,9 +54,11 @@ const Register = () => {
                   className="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white dark:before:bg-gray-700 dark:before:border-gray-600 before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100"
                 >
                   <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-200">
-                    <img
+                    <Image
                       src="https://img.icons8.com/fluency/24/null/google-logo.png"
                       alt="google"
+                      width={20}
+                      height={10}
                     />
                     <span>Continue with Google</span>
                   </span>

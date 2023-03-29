@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { db } from "../../utility/firebase.js";
+import { doc, getDoc } from "firebase/firestore";
+import { UserAuth } from "../../context/AuthContext";
+import Image from "next/image"
 
 const Account = () => {
-  return (
+  const [userAccountData, setUserAccountData] = useState(null);
+  const { handleGoogleSignIn, logout, user, isLoggedIn } = UserAuth();
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        if (user && user.displayName) {
+          const docRef = doc(db, "user", user.displayName);
+          const docSnap = await getDoc(docRef);
+          if (docSnap.exists()) {
+            setUserAccountData(docSnap.data());
+            console.log(userAccountData);
+          } else {
+            console.log("Document does not exist!");
+          }
+        }
+      } catch (error) {
+        console.error("Error getting user data:", error);
+      }
+    };
+
+    getUserData();
+  }, [user,userAccountData]);
+
+  if(user){return (
     <div className="px-6 pt-6 2xl:container">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <div className="md:col-span-2 lg:col-span-1">
           <div className="h-full space-y-6 group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
-            <img
+            <Image
               className="m-auto w-40 opacity-75"
               src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/null/external-rupee-currency-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"
+              alt=""
             />
             <div>
               <h5 className="text-center text-xl text-gray-600 dark:text-gray-300">
@@ -16,7 +45,7 @@ const Account = () => {
               </h5>
               <div className="mt-2 flex justify-center gap-4">
                 <h3 className="text-5xl font-bold text-gray-700 dark:text-white">
-                  ₹ 1M
+                 1M
                 </h3>
                 <div className="flex items-end gap-1 text-green-500">
                   <svg
@@ -239,7 +268,7 @@ const Account = () => {
                 ₹ 0.00
               </h1>
               <span className="text-gray-500 dark:text-gray-400">
-                Last Week's Investment{" "}
+                Last Week&apos;s Investment{" "}
               </span>
             </div>
             <svg
@@ -684,7 +713,9 @@ const Account = () => {
         </div>
       </div>
     </div>
-  );
+  )}else{
+    return(<p>Loading...</p>)
+  };
 };
 
 export default Account;

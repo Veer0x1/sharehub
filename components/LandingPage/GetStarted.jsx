@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-
 const GetStarted = () => {
   return (
     <section className="relative flex items-center w-full bg-green-50 dark:bg-black">
@@ -22,12 +21,12 @@ const GetStarted = () => {
                       stay informed about the latest market trends.
                     </p>
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    href="/register"
                     className="items-center ml-4 font-light justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-green-600 border-2 border-green-600 rounded-full nline-flex hover:bg-transparent hover:border-green-600 hover:text-green-600 dark:hover:text-white focus:outline-none lg:w-auto focus-visible:outline-black text-2xl focus-visible:ring-black"
                   >
                     Get started
-                  </a>
+                  </Link>
                   <a
                     href="#"
                     className="mt-2 ml-4 items-center justify-center pl-1 md:pl-0 lg:pl-10 text-sm font-semibold text-black duration-200 hover:text-green-600 focus:outline-none focus-visible:outline-gray-600 dark:text-white"
@@ -64,13 +63,18 @@ const GetStarted = () => {
                           alt="burger illustration"
                         /> */}
                         {/* <img src="https://img.icons8.com/material-rounded/96/null/stocks-growth.png"/> */}
-                        <img src="https://img.icons8.com/fluency/96/null/stocks-growth.png"/>
+                        <Image
+                          alt=""
+                          src="https://img.icons8.com/fluency/96/null/stocks-growth.png"
+                          height={400}
+                          width={400}
+                        />
                         <div className="space-y-6">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">
                             Stocks
                           </h3>
-                          <a
-                            href="#"
+                          <Link
+                            href="/stocks"
                             className="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800"
                           >
                             <svg
@@ -85,19 +89,24 @@ const GetStarted = () => {
                                 clipRule="evenodd"
                               />
                             </svg>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
                     <div className="rounded-3xl border border-gray-100 bg-white bg-opacity-50 p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
                       <div className="space-y-6 text-center">
-                      <img src="https://img.icons8.com/fluency/96/null/bonds.png"/>
+                        <Image
+                          src="https://img.icons8.com/fluency/96/null/bonds.png"
+                          alt="bonds"
+                          height={400}
+                          width={400}
+                        />
                         <div className="space-y-6">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">
                             Bonds
                           </h3>
-                          <a
-                            href="#"
+                          <Link
+                            href="/bonds"
                             className="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800"
                           >
                             <svg
@@ -112,19 +121,24 @@ const GetStarted = () => {
                                 clipRule="evenodd"
                               />
                             </svg>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
                     <div className="rounded-3xl border border-gray-100 bg-white bg-opacity-50 p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
                       <div className="space-y-6 text-center">
-                      <img src="https://img.icons8.com/fluency/96/null/bitcoin-cryptocurrency.png"/>
+                        <Image
+                          alt=""
+                          src="https://img.icons8.com/fluency/96/null/bitcoin-cryptocurrency.png"
+                          height={400}
+                          width={400}
+                        />
                         <div className="space-y-6 lg:space-y-12">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">
                             Crypto
                           </h3>
-                          <a
-                            href="#"
+                          <Link
+                            href="/crypto"
                             className="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800"
                           >
                             <svg
@@ -139,19 +153,24 @@ const GetStarted = () => {
                                 clipRule="evenodd"
                               />
                             </svg>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
                     <div className="rounded-3xl border border-gray-100 bg-white bg-opacity-50 p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
                       <div className="space-y-6 text-center">
-                      <img src="https://img.icons8.com/color/96/null/cash.png"/>
+                        <Image
+                          alt=""
+                          src="https://img.icons8.com/color/96/null/cash.png"
+                          height={400}
+                          width={400}
+                        />
                         <div className="space-y-6">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">
                             Mutual Funds
                           </h3>
-                          <a
-                            href="#"
+                          <Link
+                            href="mutual-funds"
                             className="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800"
                           >
                             <svg
@@ -166,7 +185,7 @@ const GetStarted = () => {
                                 clipRule="evenodd"
                               />
                             </svg>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
