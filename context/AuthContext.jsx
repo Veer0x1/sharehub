@@ -53,7 +53,7 @@ export const AuthContextProvider = ({ children }) => {
       const query = doc(usersRef, user.uid);
       getDoc(query).then((docSnapshot) => {
         if (!docSnapshot.exists()) {
-          setDoc(query, { name: user.displayName, balance: 1000000 });
+          setDoc(query, { name: user.displayName, balance: 1000000, Stocks: [] });
         }
       });
     }

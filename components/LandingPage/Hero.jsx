@@ -67,6 +67,8 @@ const Hero = () => {
                   <Image
                     src="https://img.icons8.com/color/96/null/india.png"
                     alt=""
+                    width={100}
+                    height={100}
                   />
                 </div>
 
@@ -74,12 +76,16 @@ const Hero = () => {
                   <Image
                     alt=""
                     src="https://img.icons8.com/color/96/null/usa.png"
+                    width={100}
+                    height={100}
                   />
                 </div>
                 <div className="flex items-center">
                   <Image
                     alt=""
                     src="https://img.icons8.com/color/96/null/ukraine.png"
+                    width={100}
+                    height={100}
                   />
                 </div>
 
@@ -87,6 +93,8 @@ const Hero = () => {
                   <Image
                     alt=""
                     src="https://img.icons8.com/fluency/96/null/brazil.png"
+                    width={100}
+                    height={100}
                   />
                 </div>
               </div>

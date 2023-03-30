@@ -25,11 +25,11 @@ const Navbar = () => {
         hidden
         aria-hidden="true"
       />
-      <nav className="fixed z-20 w-full bg-white/90 dark:bg-gray-900/80 backdrop-blur navbar shadow-2xl shadow-gray-600/5 border-b border-gray-100 dark:border-gray-800 peer-checked:navbar-active dark:shadow-none">
+      <nav className="fixed w-full bg-white/90 dark:bg-gray-900/80 backdrop-blur navbar shadow-2xl shadow-gray-600/5 border-b border-gray-100 dark:border-gray-800 peer-checked:navbar-active dark:shadow-none">
         <div className="xl:container m-auto px-6 md:px-12 lg:px-6">
           <div className="flex flex-wrap items-center justify-between gap-6  md:gap-0 ">
             <div className="w-full items-center flex justify-between lg:w-auto">
-              <Link className="relative z-10" href="/" aria-label="logo">
+              <Link className="relative z-50" href="/" aria-label="logo">
                 <Image
                   src={Logo}
                   className="bg-contain"

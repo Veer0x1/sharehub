@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AssetPage from "./../components/AssetPage";
+import StocksAsset from "./../components/StocksAsset";
+import Navbar from "../components/Navbar";
 
 const options = {
   method: "GET",
-  path: "​https://financialmodelingprep.com/api/v3/quote/AAPL,FB?apikey=4feb348a2361918699b6ce5708c52126",
-  hostname: 'financialmodelingprep.com',
-  port: 443
-  
+  url: "https://latest-stock-price.p.rapidapi.com/price",
+  params: { Indices: "NIFTY 50" },
+  headers: {
+    "X-RapidAPI-Key": "af4250d833mshef08644cdfbbf74p104647jsn8e280c3672e8",
+    "X-RapidAPI-Host": "latest-stock-price.p.rapidapi.com",
+  },
 };
 
-const Stocks = ({stocksData}) => {
-  
+const Stocks = ({ stocksData }) => {
   if (stocksData.length === 0) {
     return <h1>Fetching Data...</h1>;
   } else {
-    return <AssetPage CryptoData={cryptoData} />;
+    return (
+      <>
+        <Navbar />
+        <StocksAsset StocksData={stocksData} />
+      </>
+    );
   }
 };
 
@@ -24,8 +31,7 @@ export default Stocks;
 export async function getServerSideProps() {
   try {
     const response = await axios.request(options);
-    console.log("here is response")
-    console.log(response)
+
     const stocksData = response.data;
     return {
       props: {
@@ -33,7 +39,6 @@ export async function getServerSideProps() {
       },
     };
   } catch (error) {
-    console.log('error occured >>>>>')
     console.log(error);
     return {
       props: {

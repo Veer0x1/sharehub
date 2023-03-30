@@ -80,16 +80,18 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="/your-stocks"
                 className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300"
               >
                 <Image
                   src="https://img.icons8.com/fluency/96/null/stocks-growth.png"
                   className="h-5"
                   alt="stocks icon"
+                  width={25}
+                  height={25}
                 />
 
-                <span className="group-hover:text-green-600 dark:group-hover:text-green-600">
+                <span  className="group-hover:text-green-600 dark:group-hover:text-green-600">
                   Stocks
                 </span>
               </Link>
@@ -103,6 +105,8 @@ const Sidebar = () => {
                   src="https://img.icons8.com/fluency/96/null/bonds.png"
                   className="h-5"
                   alt=""
+                  width={25}
+                  height={25}
                 />
 
                 <span className="group-hover:text-green-500 dark:group-hover:text-green-500">
@@ -119,6 +123,8 @@ const Sidebar = () => {
                   src="https://img.icons8.com/fluency/96/null/bitcoin-cryptocurrency.png"
                   className="h-5"
                   alt=""
+                  width={25}
+                  height={25}
                 />
                 <span className="group-hover:text-green-500 dark:group-hover:text-green-500">
                   Crypto
@@ -134,6 +140,8 @@ const Sidebar = () => {
                   src="https://img.icons8.com/color/96/null/cash.png"
                   className="h-5"
                   alt=""
+                  width={25}
+                  height={25}
                 />
                 <span className="group-hover:text-green-500 dark:group-hover:text-green-500">
                   Mutual Funds

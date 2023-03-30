@@ -14,9 +14,9 @@ const Team = () => {
         </h2>
         
       </div>
-      <div className="grid gap-28 py-20 md:grid-cols-3 md:gap-12">
-        <div className="group space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
-          <div className="mx-auto -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
+      <div className="grid  gap-28 py-20 md:grid-cols-3 md:gap-12">
+        <div className="group z-[-1]  space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
+          <div className="mx-auto  -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
             <Image
               className="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"
               src={Balveer}
@@ -33,8 +33,8 @@ const Team = () => {
           </div>
         </div>
   
-        <div className="group space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
-          <div className="mx-auto -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
+        <div className="group z-[-1] space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
+          <div className="mx-auto  -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
             <Image
               className="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"
               src={Pranshu}
@@ -51,8 +51,8 @@ const Team = () => {
           </div>
         </div>
   
-        <div className="group space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
-          <div className="mx-auto -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
+        <div className="group z-[-1] space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
+          <div className="mx-auto  -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
             <Image
               className="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"
               src={Prazzwal}

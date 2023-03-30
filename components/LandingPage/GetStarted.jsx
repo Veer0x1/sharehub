@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const GetStarted = () => {
   return (
-    <section className="relative flex items-center w-full bg-green-50 dark:bg-black">
+    <section className=" z-[-1] relative flex items-center w-full bg-green-50 dark:bg-black">
       <div className="relative items-center w-full px-5 mx-auto md:px-12 lg:px-0 max-w-7xl">
         <div className="relative flex-col items-start m-auto align-middle">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">

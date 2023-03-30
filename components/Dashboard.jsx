@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../assets/logo.png";
+import StocksPortfolio from "./dashboard/StocksPortfolio";
 
 import { useRouter } from "next/router";
 
@@ -102,6 +103,7 @@ const Dashboard = () => {
         </div>
 
         <Account />
+        <StocksPortfolio />
       </div>
     </section>
   );

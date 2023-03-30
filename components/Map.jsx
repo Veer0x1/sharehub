@@ -10,10 +10,10 @@ const Map = () => {
           <iframe
             width="100%"
             height="100%"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
+            marginHeight="0"
+            marginWidth="0"
             className='rounded-xl p-2'
             src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Varansi%20India+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           >

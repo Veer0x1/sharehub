@@ -13,6 +13,8 @@ const Stats = () => {
                 src="https://img.icons8.com/ios-filled/50/null/rupee.png"
                 className="w-[50px]"
                 alt=""
+                width={32}
+                height={32}
               />
             </div>
             <div className="flex flex-col justify-center align-middle">
@@ -64,7 +66,7 @@ const Stats = () => {
           </div>
           <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100">
             <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-violet-400">
-              <Image src="https://img.icons8.com/ios-filled/50/null/coins.png" alt="" />
+              <Image src="https://img.icons8.com/ios-filled/50/null/coins.png" alt="" width={32} height={32} />
             </div>
             <div className="flex flex-col justify-center align-middle">
               <p className="text-3xl font-semibold leading-none">150+</p>
