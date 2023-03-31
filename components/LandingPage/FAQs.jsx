@@ -4,7 +4,7 @@ const FAQs = () => {
   return (
     <div>
       <h2 className="text-center pt-24 pb-6 text-2xl font-semibold sm:text-4xl bg-green-50 dark:bg-black">Frequently Asked Questions</h2>
-      <div className="space-y-4 bg-green-50">
+      <div className="space-y-4 bg-green-50 dark:bg-black">
         <details
           className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-white p-6 [&_summary::-webkit-details-marker]:hidden"
           open
