@@ -5,35 +5,28 @@ import {
   getDoc,
   setDoc,
   collection,
-  set,
-  addDoc,
 } from "firebase/firestore";
-
 import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithRedirect,
   signOut,
-  onAuthStateChanged,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-
 import { auth, db } from "../utility/firebase";
 
 const AuthContext = createContext();
+
 export const AuthContextProvider = ({ children }) => {
   const router = useRouter();
-  //   const [user, setUser] = useState({});
-  const [user, setUser] = useAuthState(auth);
-  const [isLoggedIn, setIsLoggedIn] = useState(user?.displayName);
+  const [user] = useAuthState(auth);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!user?.displayName);
 
   const handleGoogleSignIn = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      signInWithRedirect(auth, provider);
-      setIsLoggedIn(true);
+      await signInWithPopup(auth, provider);
     } catch (error) {
-      setIsLoggedIn(false);
       console.log(error);
     }
   };
@@ -42,8 +35,6 @@ export const AuthContextProvider = ({ children }) => {
     console.log("LOGGING OUT");
     await router.replace("/");
     await signOut(auth);
-    setIsLoggedIn(false);
-    // setUser({});
   };
 
   useEffect(() => {
@@ -59,7 +50,7 @@ export const AuthContextProvider = ({ children }) => {
             Bonds: [],
             MutualFunds: [],
             Crypto: [],
-            investedValue:0
+            investedValue: 0
           });
         }
       });

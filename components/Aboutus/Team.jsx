@@ -6,16 +6,16 @@ import Balveer from '../../public/Balveer.jpeg'
 const Team = () => {
   return (
     
-    <div className="py-20">
-    <div className="container mx-auto px-6 text-center md:px-12">
-      <div className="mb-16">
-        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+    <div className="py-20 bg-green-50">
+    <div className="mx-auto px-6 text-center md:px-12">
+      <div className="pb-16">
+        <h2 className="pb-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
           Our Team Members
         </h2>
         
       </div>
       <div className="grid  gap-28 py-20 md:grid-cols-3 md:gap-12">
-        <div className="group z-[-1]  space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
+        <div className="group space-y-8 border-t-4 border-gray-800 dark:border-gray-800">
           <div className="mx-auto  -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
             <Image
               className="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"
@@ -33,7 +33,7 @@ const Team = () => {
           </div>
         </div>
   
-        <div className="group z-[-1] space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
+        <div className="group space-y-8 border-t-4 border-gray-800 dark:border-gray-800">
           <div className="mx-auto  -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
             <Image
               className="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"
@@ -51,7 +51,7 @@ const Team = () => {
           </div>
         </div>
   
-        <div className="group z-[-1] space-y-8 border-t-4 border-gray-100 dark:border-gray-800">
+        <div className="group space-y-8 border-t-4 border-gray-800 dark:border-gray-800">
           <div className="mx-auto  -mt-16 h-32 w-32 rotate-45 overflow-hidden rounded-[2rem]">
             <Image
               className="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"

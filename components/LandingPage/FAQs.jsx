@@ -3,10 +3,10 @@ import React from "react";
 const FAQs = () => {
   return (
     <div>
-      <h2 className="text-center mt-24 mb-6 text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
-      <div className="space-y-4">
+      <h2 className="text-center pt-24 pb-6 text-2xl font-semibold sm:text-4xl bg-green-50 dark:bg-black">Frequently Asked Questions</h2>
+      <div className="space-y-4 bg-green-50">
         <details
-          className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+          className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-white p-6 [&_summary::-webkit-details-marker]:hidden"
           open
         >
           <summary className="flex items-center justify-between cursor-pointer">
@@ -38,7 +38,7 @@ const FAQs = () => {
           </p>
         </details>
 
-        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-white p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
             <h2 className="text-lg font-medium text-gray-900 dark:text-warning">
               Can I Withdraw Mutual Fund Anytime?
@@ -66,7 +66,7 @@ const FAQs = () => {
             it&apos;s an ELSS mutual fund.
           </p>
         </details>
-        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-white p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
             <h2 className="text-lg font-medium text-gray-900 dark:text-warning">
               How to choose a mutual fund that suits your financial objective?
@@ -96,7 +96,7 @@ const FAQs = () => {
             return, tax saving, top companies, and much more.
           </p>
         </details>
-        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-white p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
             <h2 className="text-lg font-medium text-gray-900 dark:text-warning">
               How to Invest in Mutual funds on ShareHub?

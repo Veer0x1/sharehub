@@ -7,8 +7,8 @@ const GetStarted = () => {
  
     return (
     <div>
-    <div className="py-16">
-    <div className="container m-auto space-y-8 px-6 text-gray-500 md:px-12 lg:px-20 pt-64 pb-44 dark:from-gray-900 bg-gradient-to-b from-white to-green-50 ">
+    <div>
+    <div className="p-auto space-y-8 px-6 text-gray-500 md:px-12 lg:px-20 pt-64 pb-44 dark:from-gray-900 bg-gradient-to-b from-white to-green-50 ">
       
       <div className="m-auto space-y-6 md:w-8/12 lg:w-7/12">
         <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">Get Started now</h1>

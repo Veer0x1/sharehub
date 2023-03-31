@@ -5,9 +5,9 @@ import { faCoins } from "@fortawesome/free-solid-svg-icons";
 const Stats = () => {
   return (
     <div>
-      <h2 className="text-left ml-20 mt-24 mb-4 text-2xl font-semibold sm:text-4xl">Our Stats</h2>
+      <h2 className="text-left pl-20 pt-24 pb-4 text-2xl font-semibold sm:text-4xl bg-green-50 dark:bg-black">Our Stats</h2>
       
-      <section className="p-6 my-6 bg-green-50 dark:bg-black dark:text-gray-100">
+      <section className="p-6 py-6 bg-white dark:bg-black dark:text-gray-100">
         <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
           <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100">
             <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 dark:bg-pink-600">

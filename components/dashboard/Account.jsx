@@ -6,7 +6,7 @@ import Image from "next/image";
 import { db } from "../../utility/firebase.js";
 import Rupee from "../../public/rupee.png";
 import Investment from "../../public/investment.png";
-
+import Portfolio from "../../public/portfolio.png";
 import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 
 const Account = () => {
@@ -42,24 +42,24 @@ const Account = () => {
           <div className="md:col-span-2 lg:col-span-1">
             <div className="h-full space-y-6 group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-black bg-opacity-50 shadow-2xl shadow-gray-600/10">
               <Image
-                className="m-auto w-40 opacity-75"
+                className="m-auto opacity-75"
                 src={Rupee}
                 alt=""
-                width={100}
-                height={100}
+                width={200}
+                height={200}
               />
               <div>
-                <h5 className="text-center text-xl text-gray-600 dark:text-gray-300">
+                <h5 className="text-center text-3xl text-gray-600 dark:text-gray-300">
                   Balance
                 </h5>
                 <div className="mt-2 flex justify-center gap-4">
                   <h3 className="text-5xl font-bold text-gray-700 dark:text-white">
-                    {userAccountData.balance.toFixed(2)}
+                  ₹{userAccountData.balance.toFixed(2)}
                   </h3>
                   
                 </div>
               </div>
-              <table className="w-full text-gray-600 dark:text-gray-200">
+              {/* <table className="w-full text-gray-600 dark:text-gray-200">
                 <tbody>
                   <tr>
                     <td className="py-2">Tailored ui</td>
@@ -251,12 +251,12 @@ const Account = () => {
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> */}
             </div>
           </div>
           <div>
             <div className="h-full group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-black bg-opacity-50 shadow-2xl shadow-gray-600/10">
-              <h5 className="text-xl text-gray-700 dark:text-gray-300">
+              <h5 className="text-3xl text-gray-700 dark:text-gray-300">
                 Invested Value{" "}
               </h5>
               <div className="my-8">
@@ -267,10 +267,10 @@ const Account = () => {
                   Last Week&apos;s Investment{" "}
                 </span>
               </div>
-             <Image src={Investment} height={100} width={100}
+             <Image src={Investment} height={150} width={150}
              className="h-30 w-30 m-auto"
               alt=""/>
-              <table className="mt-6 -mb-2 w-full text-gray-600">
+              {/* <table className="mt-6 -mb-2 w-full text-gray-600">
                 <tbody>
                   <tr className="dark:text-gray-300">
                     <td className="py-2">From new users</td>
@@ -399,12 +399,13 @@ const Account = () => {
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> */}
             </div>
           </div>
           <div>
             <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-black bg-opacity-50 shadow-2xl shadow-gray-600/10 lg:h-full">
-              <svg
+            <Image src={Portfolio}/>
+              {/* <svg
                 className="m-auto w-40"
                 viewBox="0 0 56 56"
                 fill="none"
@@ -447,9 +448,9 @@ const Account = () => {
                     <stop offset="1" stop-color="#7517F8" />
                   </linearGradient>
                 </defs>
-              </svg>
+              </svg> */}
               <div className="mt-6">
-                <h5 className="text-center text-xl text-gray-700 dark:text-gray-300">
+                <h5 className="text-center text-3xl text-gray-700 dark:text-gray-300">
                   Portfolio Value
                 </h5>
                 <div className="mt-2 flex justify-center gap-4">
@@ -472,7 +473,7 @@ const Account = () => {
                   </div>
                 </div>
               </div>
-              <table className="mt-6 -mb-2 w-full text-gray-600 dark:text-gray-300">
+              {/* <table className="mt-6 -mb-2 w-full text-gray-600 dark:text-gray-300">
                 <tbody>
                   <tr>
                     <td className="py-2">Tailored ui</td>
@@ -664,7 +665,7 @@ const Account = () => {
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> */}
             </div>
           </div>
         </div>

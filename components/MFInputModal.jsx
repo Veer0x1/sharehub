@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 import { db } from "../utility/firebase.js";
@@ -6,62 +6,67 @@ import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 import { UserAuth } from "../context/AuthContext";
 
 const InputModalCrypto = ({ IsOpen, SetIsOpen, Buy, SetBuy, CryptoData }) => {
+  
   const [quantity, setQuantity] = useState(null);
-
   const { user } = UserAuth();
 
-  const handleClick = async () => {
-    if (user) {
-      if (Buy) {
-        const docRef = doc(db, "user", user.uid);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          let updatedCryptos;
-          const existingCryptoIndex = docSnap
-            .data()
-            .MutualFunds.findIndex((obj) => obj.name === CryptoData);
-
-          if (existingCryptoIndex !== -1) {
-            // Update the existing stock object
-            const existingCrypto =
-              docSnap.data().MutualFunds[existingCryptoIndex];
-            const updatedCrypto = {
-              ...existingCrypto,
-              quantity: Number(existingCrypto.quantity) + Number(quantity),
-            };
-            updatedCryptos = [
-              ...docSnap.data().MutualFunds.slice(0, existingCryptoIndex),
-              updatedCrypto,
-              ...docSnap.data().MutualFunds.slice(existingCryptoIndex + 1),
-            ];
-          } else {
-            // Add a new stock object
-            updatedCryptos = [
-              ...docSnap.data().MutualFunds,
-              {
-                name: String(CryptoData),
-                quantity: Number(quantity),
-              },
-            ];
-          }
-
-          setDoc(docRef, {
-            ...docSnap.data(),
-            MutualFunds: updatedCryptos,
-            balance: Number(docSnap.data().balance - quantity),
-            investedValue: Number(docSnap.data().investedValue + quantity), // Set balance as number
-          });
-
-          toast.success("Bought Successfully");
-          SetIsOpen(false);
-          SetBuy(false);
-        }
-      }
-    } else {
-      toast.error("please login");
+  const handleClick = useCallback(async () => {
+    if (!user) {
+      toast.error("Please login");
+      return;
     }
-  };
+
+    if (!Buy) {
+      return;
+    }
+
+    const docRef = doc(db, "user", user.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+      return;
+    }
+
+    const { MutualFunds, balance, investedValue } = docSnap.data();
+    const existingCryptoIndex =
+      MutualFunds?.findIndex((obj) => obj.name === CryptoData) ?? -1;
+
+    let updatedCryptos;
+
+    if (existingCryptoIndex !== -1) {
+      // Update the existing stock object
+      const existingCrypto = MutualFunds[existingCryptoIndex];
+      const updatedCrypto = {
+        ...existingCrypto,
+        quantity: Number(existingCrypto.quantity) + Number(quantity),
+      };
+      updatedCryptos = [
+        ...MutualFunds.slice(0, existingCryptoIndex),
+        updatedCrypto,
+        ...MutualFunds.slice(existingCryptoIndex + 1),
+      ];
+    } else {
+      // Add a new stock object
+      updatedCryptos = [
+        ...MutualFunds,
+        { name: String(CryptoData), quantity: Number(quantity) },
+      ];
+    }
+
+    await setDoc(
+      docRef,
+      {
+        MutualFunds: updatedCryptos,
+        balance: Number(balance - quantity),
+        investedValue: Number(investedValue + quantity),
+      },
+      { merge: true }
+    );
+
+    toast.success("Bought successfully");
+    SetIsOpen(false);
+    SetBuy(false);
+  }, [user, Buy, CryptoData, quantity]);
 
   if (IsOpen) {
     return (

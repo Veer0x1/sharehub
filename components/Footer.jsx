@@ -9,7 +9,7 @@ const Footer = () => {
   }
   return (
     <div>
-      <footer className="w-full bg-green-50 dark:bg-black py-16 mt-10">
+      <footer className="w-full bg-green-50 dark:bg-black py-16 pt-10">
         <div className="md:px-12 lg:px-28">
           <div className="container m-auto space-y-6 text-gray-600 dark:text-gray-300">
             <Image src={Logo} alt="logo sharehub" className="m-auto w-40" />

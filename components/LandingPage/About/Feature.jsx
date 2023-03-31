@@ -9,13 +9,13 @@ import Access from "../../../public/access.png";
 
 const Feature = () => {
   return (
-    <section className="m-4 md:m-8 dark:black dark:text-gray-100">
-      <div className="container mx-auto p-4 my-6 space-y-2 text-center">
-        <h2 className="text-5xl font-bold">We Provide ...</h2>
+    <section className=" md:p-8 dark:bg-black dark:text-gray-100 bg-green-50">
+      <div className="p-4 space-y-2 text-center">
+        <h2 className="text-5xl font-bold py-20">We Provide ...</h2>
       </div>
-      <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div className="flex flex-col items-center p-4 px-20">
-          <Image src={Customer} className="h-10 w-12 bg-black" alt="" />
+          <Image src={Customer} className="h-10 w-12" alt="" />
           <h3 className="my-3 text-3xl font-semibold">Customers First</h3>
           <div className="space-y-1 leading-tight text-center">
             <p>
@@ -25,7 +25,7 @@ const Feature = () => {
           </div>
         </div>
         <div className="flex flex-col items-center p-4 px-20">
-          <Image src={Security} className="h-10 w-12 bg-black" alt="" />
+          <Image src={Security} className="h-10 w-12" alt="" />
           <h3 className="my-3 text-3xl font-semibold">Security & Safety</h3>
           <div className="space-y-1 leading-tight text-center">
             <p>
@@ -35,7 +35,7 @@ const Feature = () => {
           </div>
         </div>
         <div className="flex flex-col items-center p-4 px-20">
-          <Image src={Trust} className="h-10 w-12 bg-black" alt="" />
+          <Image src={Trust} className="h-10 w-12 " alt="" />
           <h3 className="my-3 text-3xl font-semibold">Trust</h3>
           <div className="space-y-1 leading-tight text-center">
             <p>
@@ -45,7 +45,7 @@ const Feature = () => {
           </div>
         </div>
         <div className="flex flex-col items-center p-4 px-20">
-          <Image src={Access} className="h-10 w-10 bg-black" alt="" />
+          <Image src={Access} className="h-10 w-10" alt="" />
           <h3 className="my-3 text-3xl font-semibold">Accessibility</h3>
           <div className="space-y-1 leading-tight text-center">
             <p>
@@ -55,7 +55,7 @@ const Feature = () => {
           </div>
         </div>
         <div className="flex flex-col items-center p-4 px-20">
-          <Image src={Speed} className="h-10 w-12 bg-black" alt="" />
+          <Image src={Speed} className="h-10 w-12" alt="" />
           <h3 className="my-3 text-3xl font-semibold">Speed & Efficiency</h3>
           <div className="space-y-1 leading-tight text-center">
             <p>
@@ -65,7 +65,7 @@ const Feature = () => {
           </div>
         </div>
         <div className="flex flex-col items-center p-4 px-20">
-          <Image src={Result} className="h-10 w-10 bg-black" alt="" />
+          <Image src={Result} className="h-10 w-10" alt="" />
           <h3 className="my-3 text-3xl font-semibold">Results</h3>
           <div className="space-y-1 leading-tight text-center">
             <p>We have better track records and provide best results.</p>
