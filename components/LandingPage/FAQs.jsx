@@ -3,13 +3,14 @@ import React from "react";
 const FAQs = () => {
   return (
     <div>
+      <h2 className="text-center mt-24 mb-6 text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
       <div className="space-y-4">
         <details
-          className="group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden"
+          className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden"
           open
         >
           <summary className="flex items-center justify-between cursor-pointer">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-warning">
               Is Mutual Fund Profitable?
             </h2>
 
@@ -29,7 +30,7 @@ const FAQs = () => {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed text-gray-700 dark:text-white">
             Mutual funds are a type of investment where the investors pool their
             money and invest in stocks, bonds, and other securities. They can be
             profitable if you choose the right fund and also if you are invested
@@ -37,9 +38,9 @@ const FAQs = () => {
           </p>
         </details>
 
-        <details className="group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-warning">
               Can I Withdraw Mutual Fund Anytime?
             </h2>
 
@@ -59,15 +60,15 @@ const FAQs = () => {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed text-gray-700 dark:text-white">
             Mutual fund investors can withdraw their funds anytime they want to
             if they have invested in open-ended funds. You cannot do the same if
             it&apos;s an ELSS mutual fund.
           </p>
         </details>
-        <details className="group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-warning">
               How to choose a mutual fund that suits your financial objective?
             </h2>
 
@@ -87,7 +88,7 @@ const FAQs = () => {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed text-gray-700 dark:text-white">
             The first and foremost step is to decide on how much risk you are
             willing to take and investment tenure. Once you decide this, you can
             easily select the best mutual fund for you. At ShareHub, you can
@@ -95,9 +96,9 @@ const FAQs = () => {
             return, tax saving, top companies, and much more.
           </p>
         </details>
-        <details className="group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+        <details className="ml-44 mr-44 dark:bg-gray-900 group border-l-4 border-green-500 bg-green-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex items-center justify-between cursor-pointer">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-warning">
               How to Invest in Mutual funds on ShareHub?
             </h2>
 
@@ -117,7 +118,7 @@ const FAQs = () => {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed text-gray-700 dark:text-white">
             You can either use the website or download ShareHub mobile app to
             start investing in mutual funds on ShareHub.
           </p>
