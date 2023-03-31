@@ -5,6 +5,8 @@ import { faCoins } from "@fortawesome/free-solid-svg-icons";
 const Stats = () => {
   return (
     <div>
+      <h2 className="text-left ml-20 mt-24 mb-4 text-2xl font-semibold sm:text-4xl">Our Stats</h2>
+      
       <section className="p-6 my-6 bg-green-50 dark:bg-black dark:text-gray-100">
         <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
           <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 dark:bg-gray-900 dark:text-gray-100">
@@ -74,8 +76,10 @@ const Stats = () => {
             </div>
           </div>
         </div>
-      </section>
+          </section>
+    
     </div>
+  
   );
 };
 
