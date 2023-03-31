@@ -29,12 +29,12 @@ const Dashboard = () => {
   const unSelectedClassName="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300"
   const className = isHovered ? selectedClassName : unSelectedClassName;
   return (
-    <section className="bg-gray-100 dark:bg-gray-900">
-      <aside className="fixed top-0 z-10 ml-[-100%] flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700">
+    <section className="bg-gray-100 dark:bg-black">
+      <aside className="fixed top-0 z-10 dark:bg-black ml-[-100%] flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]  dark:border-gray-700">
         <Sidebar/>
       </aside>
       <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
-        <div className="sticky top-0 h-16 border-b bg-white dark:bg-gray-800 dark:border-gray-700 lg:py-2.5">
+        <div className="sticky top-0 h-16 border-b bg-white dark:bg-black dark:border-gray-700 lg:py-2.5">
           <div className="flex items-center justify-between space-x-4 px-6 2xl:container">
             <h5
               hidden
@@ -60,8 +60,8 @@ const Dashboard = () => {
             </button>
             <div className="flex space-x-4">
               <div hidden className="md:block">
-                <div className="relative flex items-center text-gray-400 focus-within:text-cyan-400">
-                  <span className="absolute left-4 flex h-6 items-center border-r border-gray-300 pr-3 dark:border-gray-700">
+                <div className="relative flex items-center text-gray-400 focus-within:text-green-400">
+                  <span className="absolute left-4 flex h-6 items-center border-r border-green-300 pr-3 dark:border-gray-700">
                     <svg
                       xmlns="http://ww50w3.org/2000/svg"
                       className="w-4 fill-current"
@@ -79,7 +79,7 @@ const Dashboard = () => {
                     name="leadingIcon"
                     id="leadingIcon"
                     placeholder="Search here"
-                    className="outline-none w-full rounded-xl border border-gray-300 py-2.5 pl-14 pr-4 text-sm text-gray-600 transition focus:border-cyan-300 dark:bg-gray-900 dark:border-gray-700"
+                    className="outline-none w-full rounded-xl border border-gray-300 py-2.5 pl-14 pr-4 text-sm dark:text-white text-black transition focus:border-green-400 dark:bg-gray-900 dark:border-gray-700"
                   />
                 </div>
               </div>

@@ -4,6 +4,8 @@ import{useRouter} from "next/router";
 import { UserAuth } from "../../context/AuthContext";
 import Image from "next/image";
 import { db } from "../../utility/firebase.js";
+import Rupee from "../../public/rupee.png";
+import Investment from "../../public/investment.png";
 
 import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 
@@ -38,10 +40,10 @@ const Account = () => {
       <div className="px-6 pt-6 2xl:container">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="md:col-span-2 lg:col-span-1">
-            <div className="h-full space-y-6 group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+            <div className="h-full space-y-6 group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-black bg-opacity-50 shadow-2xl shadow-gray-600/10">
               <Image
                 className="m-auto w-40 opacity-75"
-                src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/null/external-rupee-currency-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"
+                src={Rupee}
                 alt=""
                 width={100}
                 height={100}
@@ -253,7 +255,7 @@ const Account = () => {
             </div>
           </div>
           <div>
-            <div className="h-full group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+            <div className="h-full group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-black bg-opacity-50 shadow-2xl shadow-gray-600/10">
               <h5 className="text-xl text-gray-700 dark:text-gray-300">
                 Invested Value{" "}
               </h5>
@@ -265,49 +267,9 @@ const Account = () => {
                   Last Week&apos;s Investment{" "}
                 </span>
               </div>
-              <svg
-                className="w-full"
-                viewBox="0 0 218 69"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0 67.5C27.8998 67.5 24.6002 15 52.5 15C80.3998 15 77.1002 29 105 29C132.9 29 128.6 52 156.5 52C184.4 52 189.127 63.8158 217.027 63.8158"
-                  stroke="url(#paint0_linear_622:13664)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M0 67.5C27.2601 67.5 30.7399 31 58 31C85.2601 31 80.7399 2 108 2C135.26 2 134.74 43 162 43C189.26 43 190.74 63.665 218 63.665"
-                  stroke="url(#paint1_linear_622:13664)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_622:13664"
-                    x1="217.027"
-                    y1="15"
-                    x2="7.91244"
-                    y2="15"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#4DFFDF" />
-                    <stop offset="1" stopColor="#4DA1FF" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint1_linear_622:13664"
-                    x1="218"
-                    y1="18.3748"
-                    x2="5.4362"
-                    y2="18.9795"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#E323FF" />
-                    <stop offset="1" stopColor="#7517F8" />
-                  </linearGradient>
-                </defs>
-              </svg>
+             <Image src={Investment} height={100} width={100}
+             className="h-30 w-30 m-auto"
+              alt=""/>
               <table className="mt-6 -mb-2 w-full text-gray-600">
                 <tbody>
                   <tr className="dark:text-gray-300">
@@ -441,7 +403,7 @@ const Account = () => {
             </div>
           </div>
           <div>
-            <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 lg:h-full">
+            <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/50 dark:shadow-none dark:border-gray-700 dark:bg-black bg-opacity-50 shadow-2xl shadow-gray-600/10 lg:h-full">
               <svg
                 className="m-auto w-40"
                 viewBox="0 0 56 56"
