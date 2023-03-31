@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 import AssetPage from "./../components/AssetPage";
 
 const options = {
-  method: "GET",
-  url: "https://pro-api.coinmarketcap.com/v1/cryptocurrency/map?sort=cmc_rank&limit=100",
-  headers: {
-    "X-CMC_PRO_API_KEY": "f78ba878-2d43-48dd-b1b8-a16530c92d4d",
+  method: 'GET',
+  url: 'https://coinranking1.p.rapidapi.com/coins',
+  params: {
+    referenceCurrencyUuid: 'yhjMzLPhuIDl',
+    timePeriod: '24h',
+    'tiers[0]': '1',
+    orderBy: 'marketCap',
+    orderDirection: 'desc',
+    limit: '50',
+    offset: '0'
   },
+  headers: {
+    'X-RapidAPI-Key': 'af4250d833mshef08644cdfbbf74p104647jsn8e280c3672e8',
+    'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+  }
 };
 
-// const options1 = {
-//   method: "GET",
-//   url: `rest.coinapi.io/v1/exchangerate/${crypto.symbol}/USD`,
-//   headers: {
-//     "X-CoinAPI-Key": "E58B822A-0FA1-4383-840C-57D0CF8E7902",
-//   },
-// };
-
 const Crypto = ({ cryptoData }) => {
+  console.log(cryptoData)
   if (cryptoData.length === 0) {
     return <h1>Fetching Data...</h1>;
   } else {
-    return <AssetPage CryptoData={cryptoData} />;
+    return<> <Navbar /><AssetPage CryptoData={cryptoData} /></>;
   }
 };
 
@@ -32,7 +36,8 @@ export async function getServerSideProps() {
   try {
     const response = await axios.request(options);
   
-    const cryptoData = response.data.data;
+    const cryptoData = response.data.data.coins;
+    
     return {
       props: {
         cryptoData: cryptoData,

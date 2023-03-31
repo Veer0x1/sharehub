@@ -5,7 +5,7 @@ import { db } from "../../utility/firebase.js";
 import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 import { UserAuth } from "../../context/AuthContext";
 
-const StocksPortfolio = () => {
+const CryptoPortfolio = () => {
   const { user } = UserAuth();
   const [userStockData, setUserStockData] = useState([]);
 
@@ -15,7 +15,7 @@ const StocksPortfolio = () => {
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         // console.log(docSnap.data().Stocks);
-        setUserStockData(docSnap.data().Stocks);
+        setUserStockData(docSnap.data().Crypto);
       } else {
         console.log("unable to fetch data");
       }
@@ -33,7 +33,7 @@ const StocksPortfolio = () => {
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
-                  Stock name
+                  Crypto name
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Quantity
@@ -59,7 +59,7 @@ const StocksPortfolio = () => {
                     </th>
                     <td className="px-6 py-4">{stock.quantity}</td>
 
-                    <td className="px-6 py-4">{stock.value}</td>
+                    <td className="px-6 py-4">{parseInt(stock.value)}</td>
                   </tr>
                 );
               })}
@@ -71,4 +71,4 @@ const StocksPortfolio = () => {
   }
 };
 
-export default StocksPortfolio;
+export default CryptoPortfolio;

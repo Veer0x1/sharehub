@@ -14,6 +14,7 @@ const Navbar = () => {
   };
   const handleProfileClick = () => {
     router.push("/dashboard");
+    // logout();
   };
   return (
     <header>
@@ -37,6 +38,18 @@ const Navbar = () => {
                   alt="logo"
                 />
               </Link>
+              {/* <div className="flex">
+                  
+                  <button onClick={handleProfileClick}>
+                    <Image
+                      className="w-8 h-8  rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                      src={user.photoURL}
+                      alt="Bordered avatar"
+                      width={400}
+                      height={400}
+                    />
+                  </button>
+                </div> */}
               <label
                 htmlFor="hbr"
                 className="peer-checked:hamburger block relative z-20 p-6 -mr-6 cursor-pointer lg:hidden"
@@ -113,28 +126,17 @@ const Navbar = () => {
                 </div>
               ) : (
                 <div className="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
-                  <a
-                    href="#"
-                    className="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full focus:before:bg-primary/10 dark:focus:before:bg-primaryLight/10 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
-                  >
-                    <button
-                      onClick={handleSignIn}
-                      className="relative text-sm font-semibold text-primary hover:text-white dark:text-primaryLight"
-                    >
-                      Sign Up
-                    </button>
-                  </a>
-                  <a
-                    href="#"
-                    className="relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primaryLight before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+                  <Link
+                    href="/register"
+                    className={`relative flex h-9 ml-auto items-center justify-center sm:px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary dark:before:bg-primaryLight before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95`}
                   >
                     <button
                       onClick={handleSignIn}
                       className="relative text-sm font-semibold text-white dark:text-gray-900"
                     >
-                      Login
+                      {user ? "Logout" : " Login"}
                     </button>
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>

@@ -25,8 +25,8 @@ const StocksAsset = ({ StocksData }) => {
         <div className="container p-2 mx-auto sm:p-4 dark:text-white ">
           <h2 className="mb-4 text-2xl font-semibold leading-tight">Stocks</h2>
           <div className="overflow-x-auto">
-            <table className="min-w-full text-xs">
-              <thead className="dark:bg-gradient-to-r from-gray-900 to-gray-600">
+            <table className="min-w-full  text-xs">
+              <thead className="dark:bg-gray-900 bg-gray-200">
                 <tr className="text-left">
                   <th className="p-3">#</th>
                   <th className="p-3">Name</th>
@@ -39,7 +39,7 @@ const StocksAsset = ({ StocksData }) => {
                 {StocksData.slice(1).map((stock, index) => {
                   return (
                     <tr
-                      className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gradient-to-r from-green-700 to-green-1000"
+                      className="border-b border-opacity-20 dark:border-gray-700 "
                       key={index}
                     >
                       <td className="p-3 ">
@@ -54,7 +54,7 @@ const StocksAsset = ({ StocksData }) => {
                       <td className="p-3">
                         <p
                           style={{
-                            color: stock.pChange >= 0 ? "green" : "red",
+                            color: stock.pChange >= 0 ? "#17c964" : "red",
                           }}
                         >
                           {stock.pChange}
@@ -72,7 +72,7 @@ const StocksAsset = ({ StocksData }) => {
                             setSell(false);
                             setBuy(true);
                           }}
-                          className="px-3 py-1 font-semibold rounded-md dark:bg-warning dark:text-gray-900 mr-1 text-primary bg-transparent border border-warning hover:bg-transparent hover:border-warning hover:text-white "
+                          className="px-3 py-1 font-semibold   rounded-md dark:bg-primary dark:text-gray-900 mr-1 text-black bg-transparent border border-primary hover:bg-transparent hover:border-green hover:text-primary "
                         >
                           Buy
                         </button>
@@ -84,7 +84,7 @@ const StocksAsset = ({ StocksData }) => {
                             setBuy(false);
                             setSell(true);
                           }}
-                          className="px-3 py-1 font-semibold rounded-md dark:bg-error dark:text-white bg-transparent border border-error hover:bg-transparent hover:border-error hover:text-white"
+                          className="px-3 py-1 font-semibold rounded-md dark:bg-error dark:text-white bg-transparent border border-error hover:bg-transparent hover:border-error hover:text-error"
                         >
                           Sell
                         </button>

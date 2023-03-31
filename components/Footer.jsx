@@ -1,7 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link"
 import Logo from "../assets/logo.png";
 const Footer = () => {
+  const clickHandler = ()=>{
+    const element = document.getElementById('features');
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <div>
       <footer className="w-full bg-green-50 dark:bg-black py-16 mt-10">
@@ -13,14 +18,14 @@ const Footer = () => {
               className="flex flex-col items-center justify-center gap-4 py-4 sm:flex-row sm:gap-8"
             >
               <li role="listitem">
-                <a href="#" className="hover:text-primary">
+                <Link href="/" className="hover:text-primary">
                   Home
-                </a>
+                </Link>
               </li>
               <li role="listitem">
-                <a href="#" className="hover:text-primary">
+                <Link onClick={clickHandler} href='/' className="hover:text-primary">
                   Features
-                </a>
+                </Link>
               </li>
               <li role="listitem">
                 <a href="#" className="hover:text-primary">
@@ -28,13 +33,13 @@ const Footer = () => {
                 </a>
               </li>
               <li role="listitem">
-                <a href="#" className="hover:text-primary">
+                <Link href="/about" className="hover:text-primary">
                   About us
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="m-auto flex w-max items-center justify-between space-x-4">
-              <a href="tel:+243996660436" aria-label="call">
+              <a href="tel:+918736008169" aria-label="call">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -73,7 +78,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://in.linkedin.com/company/linkedin"
+                href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=false&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADuDljwBs5Smzz9VTJLK40pIXJfn5qQXoJI&keywords=prazzwal%20anand&origin=RICH_QUERY_SUGGESTION&position=0&searchId=ac43a844-3bce-4b1d-8fc9-d2725911aa80&sid=(fn"
                 title="linkedin"
                 target="blank"
                 aria-label="linkedin"
@@ -91,7 +96,7 @@ const Footer = () => {
 
             <div className="text-center">
               <span className="text-sm tracking-wide">
-                Copyright © ShareHub <span id="year"></span> | All right
+                Copyright © {new Date().getFullYear()} ShareHub <span id="year"></span> | All right
                 reserved
               </span>
             </div>

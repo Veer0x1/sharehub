@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../assets/logo.png";
 import StocksPortfolio from "./dashboard/StocksPortfolio";
+import CryptoPortfolio from "./dashboard/CryptoPortfolio";
+import MutualFundsPortfolio from "./dashboard/MutualFundsPortfolio";
 
 import { useRouter } from "next/router";
 
@@ -19,8 +21,8 @@ const Dashboard = () => {
   const handleMouseOut = () => {
     setIsHovered(false);
   };
-  const router = useRouter();
-  const { handleGoogleSignIn, logout, user, isLoggedIn } = UserAuth();
+  // const router = useRouter();
+  // const { handleGoogleSignIn, logout, user, isLoggedIn } = UserAuth();
 
   
   const selectedClassName="relative flex items-center space-x-4 rounded-xl bg-gradient-to-r from-green-800 to-green-400 px-4 py-3 text-white";
@@ -104,6 +106,8 @@ const Dashboard = () => {
 
         <Account />
         <StocksPortfolio />
+        <CryptoPortfolio />
+        <MutualFundsPortfolio />
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import{useRouter} from "next/router";
 
 import { UserAuth } from "../../context/AuthContext";
 import Image from "next/image";
@@ -8,16 +9,18 @@ import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 
 const Account = () => {
   const [userAccountData, setUserAccountData] = useState(null);
-  const { handleGoogleSignIn, logout, user, isLoggedIn } = UserAuth();
+  const { logout, user, isLoggedIn } = UserAuth();
+  const router = useRouter();
 
   useEffect(() => {
     const getUserData = async () => {
       try {
-        if (user && user.displayName) {
+        if (user) {
           const docRef = doc(db, "user", user.uid);
           const docSnap = await getDoc(docRef);
           if (docSnap.exists()) {
             setUserAccountData(docSnap.data());
+            // router.push("/dashboard");
           } else {
             console.log("Document does not exist!");
           }
@@ -28,7 +31,7 @@ const Account = () => {
     };
 
     getUserData();
-  }, [user, user.displayName, setUserAccountData]);
+  }, [user, setUserAccountData,router]);
 
   if (userAccountData) {
     return (
@@ -51,20 +54,7 @@ const Account = () => {
                   <h3 className="text-5xl font-bold text-gray-700 dark:text-white">
                     {userAccountData.balance.toFixed(2)}
                   </h3>
-                  {/* <div className="flex items-end gap-1 text-green-500">
-                  <svg
-                    className="w-3"
-                    viewBox="0 0 12 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.00001 0L12 8H-3.05176e-05L6.00001 0Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <span>2%</span>
-                </div> */}
+                  
                 </div>
               </div>
               <table className="w-full text-gray-600 dark:text-gray-200">
@@ -269,7 +259,7 @@ const Account = () => {
               </h5>
               <div className="my-8">
                 <h1 className="text-5xl font-bold text-gray-800 dark:text-white">
-                  ₹ 0.00
+                  ₹ {userAccountData.investedValue.toFixed(2)}
                 </h1>
                 <span className="text-gray-500 dark:text-gray-400">
                   Last Week&apos;s Investment{" "}
@@ -502,7 +492,7 @@ const Account = () => {
                 </h5>
                 <div className="mt-2 flex justify-center gap-4">
                   <h3 className="text-3xl font-bold text-gray-700 dark:text-white">
-                    ₹ 0.00
+                    ₹ {userAccountData.investedValue.toFixed(2)}
                   </h3>
                   <div className="flex items-end gap-1 text-green-500">
                     <svg

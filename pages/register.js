@@ -14,7 +14,7 @@ const Register = () => {
   const { handleGoogleSignIn, logout, user } = UserAuth();
   if (user) {
     console.log(user)
-    router.push("/dashboard");
+    router.push("/");
   }
   // const [user, setUser] = useAuthState(auth);
   // const googleAuth = new GoogleAuthProvider();
