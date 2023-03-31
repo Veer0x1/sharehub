@@ -23,8 +23,6 @@ const StocksPortfolio = () => {
 
     getUserStockData();
   }, [user]);
-  console.log("this log");
-  console.log(userStockData);
   if (userStockData) {
     return (
       <div className="m-5">
