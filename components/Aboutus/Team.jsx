@@ -6,7 +6,7 @@ import Balveer from '../../public/Balveer.jpeg'
 const Team = () => {
   return (
     
-    <div className="py-20 bg-green-50">
+    <div className="py-20 bg-green-50 dark:bg-black">
     <div className="mx-auto px-6 text-center md:px-12">
       <div className="pb-16">
         <h2 className="pb-4 text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
