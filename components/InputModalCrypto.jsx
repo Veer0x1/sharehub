@@ -70,7 +70,7 @@ const InputModalCrypto = ({
                   docSnap.data().investedValue +
                   quantity * parseFloat(CryptoData.price * 80), // Set balance as number
               });
-    
+
               toast.success("Bought Successfully");
               SetIsOpen(false);
               SetBuy(false);
@@ -78,10 +78,9 @@ const InputModalCrypto = ({
           } else {
             toast.error("Insufficient funds");
           }
-
-          
         }
       }
+      
       if (Sell) {
         const docRef = doc(db, "user", user.uid);
         const docSnap = await getDoc(docRef);
@@ -95,24 +94,22 @@ const InputModalCrypto = ({
 
           if (existingCryptoIndex !== -1) {
             // Update the existing stock object
-
             isStockAvailable = true;
             console.log(isStockAvailable);
-            // const existingCrypto = docSnap.data().Crypto[existingCryptoIndex];
             const updatedCrypto = {
               ...existingCrypto,
               quantity:
                 existingCrypto.quantity >= quantity
                   ? Number(existingCrypto.quantity) - Number(quantity)
                   : toast.error(
-                      "You do not have sufficeinty quantity of this stock"
+                      "You do not have sufficient quantity of this stock"
                     ),
               value:
                 existingCrypto.quantity >= quantity
                   ? Number(existingCrypto.value) -
                     Number(quantity * parseFloat(CryptoData.price * 80))
                   : toast.error(
-                      "You do not have sufficeinty quantity of this stock"
+                      "You do not have sufficient quantity of this stock"
                     ),
             };
             updatedCryptos = [
@@ -120,31 +117,26 @@ const InputModalCrypto = ({
               updatedCrypto,
               ...docSnap.data().Crypto.slice(existingCryptoIndex + 1),
             ];
+
+            setDoc(docRef, {
+              ...docSnap.data(),
+              Crypto: updatedCryptos,
+              balance:
+                docSnap.data().balance +
+                quantity * parseFloat(CryptoData.price * 80),
+              investedValue:
+                docSnap.data().investedValue -
+                quantity * parseFloat(CryptoData.price * 80),
+            });
+
+            if (existingCrypto.quantity >= quantity) {
+              toast.success("Sold Successfully");
+            }
           } else {
             // Stock object not found
-
             isStockAvailable = false;
             updatedCryptos = docSnap.data().Crypto;
-
-            SetIsOpen(false);
-            SetSell(false);
-          }
-
-          setDoc(docRef, {
-            ...docSnap.data(),
-            Crypto: updatedCryptos,
-            balance:
-              docSnap.data().balance +
-              quantity * parseFloat(CryptoData.price * 80),
-            investedValue:
-              docSnap.data().investedValue -
-              quantity * parseFloat(CryptoData.price * 80),
-          });
-
-          if (existingCrypto.quantity >= quantity) {
-            isStockAvailable
-              ? toast.success("Sold Successfully")
-              : toast.error("You do not own this stock");
+            toast.error("You do not own this stock");
           }
 
           SetIsOpen(false);

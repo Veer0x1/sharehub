@@ -79,67 +79,45 @@ const InputModal = ({
         const docRef = doc(db, "user", user.uid);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-          let isStockAvailable;
-          let updatedStocks;
-          const existingStockIndex = docSnap
-            .data()
-            .Stocks.findIndex((obj) => obj.name === StockData.symbol);
-          const existingStock = docSnap.data().Stocks[existingStockIndex];
-         
+          const existingStockIndex = docSnap.data().Stocks.findIndex(
+            (obj) => obj.name === StockData.symbol
+          );
           if (existingStockIndex !== -1) {
-            // Update the existing stock object
-
-            isStockAvailable = true;
-            console.log(isStockAvailable);
-            // const existingStock = docSnap.data().Stocks[existingStockIndex];
-            const updatedStock = {
-              ...existingStock,
-              quantity:
-                existingStock.quantity >= quantity
-                  ? Number(existingStock.quantity) - Number(quantity)
-                  : toast.error(
-                      "You do not have sufficeinty quantity of this stock"
-                    ),
-              value:
-                existingStock.quantity >= quantity
-                  ? Number(existingStock.value) -
-                    Number(quantity * StockData.open)
-                  : toast.error(
-                      "You do not have sufficeinty quantity of this stock"
-                    ),
-            };
-            updatedStocks = [
-              ...docSnap.data().Stocks.slice(0, existingStockIndex),
-              updatedStock,
-              ...docSnap.data().Stocks.slice(existingStockIndex + 1),
-            ];
+            const existingStock = docSnap.data().Stocks[existingStockIndex];
+            if (existingStock.quantity >= quantity) {
+              // Update the existing stock object
+              const updatedStock = {
+                ...existingStock,
+                quantity: existingStock.quantity - quantity,
+                value: existingStock.value - quantity * StockData.open
+              };
+              const updatedStocks = [
+                ...docSnap.data().Stocks.slice(0, existingStockIndex),
+                updatedStock,
+                ...docSnap.data().Stocks.slice(existingStockIndex + 1)
+              ];
+      
+              // Update user document with new stocks and balance
+              await setDoc(docRef, {
+                ...docSnap.data(),
+                Stocks: updatedStocks,
+                balance: docSnap.data().balance + quantity * StockData.open,
+                investedValue: docSnap.data().investedValue - quantity * StockData.open
+              });
+      
+              toast.success("Sold Successfully");
+            } else {
+              toast.error("You do not have sufficient quantity of this stock");
+            }
           } else {
-            // Stock object not found
-
-            isStockAvailable = false;
-            updatedStocks = docSnap.data().Stocks;
-
-            SetIsOpen(false);
-            SetSell(false);
+            toast.error("You do not own this stock");
           }
-
-          setDoc(docRef, {
-            ...docSnap.data(),
-            Stocks: updatedStocks,
-            balance: docSnap.data().balance + quantity * StockData.open,
-            investedValue: docSnap.data().investedValue - quantity * StockData.open
-          });
-
-          if (existingStock.quantity >= quantity) {
-            isStockAvailable
-              ? toast.success("Sold Successfully")
-              : toast.error("You do not own this stock");
-          }
-
+      
           SetIsOpen(false);
           SetSell(false);
         }
       }
+      
     } else {
       toast.error("please login");
     }
