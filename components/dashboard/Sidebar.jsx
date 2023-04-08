@@ -91,7 +91,7 @@ const Sidebar = () => {
                   height={25}
                 />
 
-                <span  className="group-hover:text-green-600 dark:group-hover:text-green-600">
+                <span className="group-hover:text-green-600 dark:group-hover:text-green-600">
                   Stocks
                 </span>
               </Link>
@@ -156,7 +156,7 @@ const Sidebar = () => {
             onClick={() => {
               logout();
             }}
-            className="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600 dark:text-gray-300"
+            className="group flex items-center space-x-4 rounded-md px-4 py-3 text-red-600  hover:text-black dark:hover:text-white dark:text-red-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -172,15 +172,15 @@ const Sidebar = () => {
                 d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
               />
             </svg>
-            <span className="group-hover:text-gray-700 dark:group-hover:text-white">
+            <span className="group-hover:text-white-700 dark:group-hover:text-white">
               Logout
             </span>
           </button>
         </div>
       </>
     );
-  }else{
-    return <p>Loading...</p>
+  } else {
+    return <p>Loading...</p>;
   }
 };
 
