@@ -13,7 +13,7 @@ const AssetPage = ({ CryptoData }) => {
       <>
       <div>
         <div className="container  p-2 mx-auto sm:p-4 dark:text-white ">
-          <h2 className="mb-4 text-2xl font-semibold leading-tight">Crypto</h2>
+          <h2 className="mb-4 text-2xl font-semibold leading-tight mt-20">Crypto</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-xs">
               <thead className="bg-gray-900">

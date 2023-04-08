@@ -51,8 +51,8 @@ const GetStarted = () => {
             </div>
             <div className="order-first block w-full mt-12 aspect-square lg:mt-0">
               <div className="py-16">
-                <div className="m-auto space-y-12 px-6 xl:container md:px-12 lg:px-20">
-                  <div className="mt-16 grid gap-8 sm:mx-auto sm:w-2/3 md:-mx-8 md:w-full md:grid-cols-2">
+                <div className="m-auto space-y-12 px-6 xl:container md:px-12 lg:px-20 ">
+                  <div className="mt-16 grid gap-8 sm:mx-auto sm:w-2/3 md:-mx-8 md:w-full md:grid-cols-2 ">
                     <div className="rounded-3xl border border-gray-100 bg-white bg-opacity-50 p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
                       <div className="space-y-6 text-center">
                         {/* <img
@@ -66,8 +66,9 @@ const GetStarted = () => {
                         <Image
                           alt=""
                           src="https://img.icons8.com/fluency/96/null/stocks-growth.png"
-                          height={400}
-                          width={400}
+                          height={200}
+                          width={200}
+                          className="mx-auto h-20 w-20 md:h-32 md:w-32"
                         />
                         <div className="space-y-6">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">
@@ -98,8 +99,9 @@ const GetStarted = () => {
                         <Image
                           src="https://img.icons8.com/fluency/96/null/bonds.png"
                           alt="bonds"
-                          height={400}
-                          width={400}
+                          height={200}
+                          width={200}
+                          className="mx-auto h-20 w-20 md:h-32 md:w-32"
                         />
                         <div className="space-y-6">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">
@@ -130,8 +132,9 @@ const GetStarted = () => {
                         <Image
                           alt=""
                           src="https://img.icons8.com/fluency/96/null/bitcoin-cryptocurrency.png"
-                          height={400}
-                          width={400}
+                          height={200}
+                          width={200}
+                          className="mx-auto h-20 w-20 md:h-32 md:w-32"
                         />
                         <div className="space-y-6 lg:space-y-12">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">
@@ -162,8 +165,9 @@ const GetStarted = () => {
                         <Image
                           alt=""
                           src="https://img.icons8.com/color/96/null/cash.png"
-                          height={400}
-                          width={400}
+                          height={200}
+                          width={200}
+                          className="mx-auto h-20 w-20 md:h-32 md:w-32"
                         />
                         <div className="space-y-6">
                           <h3 className="text-lg font-semibold text-gray-800 transition dark:text-white">

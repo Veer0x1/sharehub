@@ -23,7 +23,7 @@ const StocksAsset = ({ StocksData }) => {
     return (
       <div>
         <div className="container p-2 mx-auto sm:p-4 dark:text-white ">
-          <h2 className="mb-4 text-2xl font-semibold leading-tight">Stocks</h2>
+          <h2 className="mb-4 text-2xl font-semibold leading-tight mt-20">Stocks</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full  text-xs">
               <thead className="dark:bg-gray-900 bg-gray-200">
@@ -72,7 +72,7 @@ const StocksAsset = ({ StocksData }) => {
                             setSell(false);
                             setBuy(true);
                           }}
-                          className="px-3 py-1 font-semibold   rounded-md dark:bg-primary dark:text-gray-900 mr-1 text-black bg-transparent border border-primary hover:bg-transparent hover:border-green hover:text-primary "
+                          className="px-3 py-[3px] font-semibold   rounded-md dark:bg-primary dark:text-gray-900 mr-1 text-black bg-transparent border border-primary hover:bg-transparent hover:border-green hover:text-primary "
                         >
                           Buy
                         </button>
