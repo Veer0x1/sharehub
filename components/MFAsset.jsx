@@ -10,7 +10,7 @@ const MFAsset = ({ CryptoData }) => {
   return (
     <>
       <div className="container  p-2 mx-auto sm:p-4 dark:text-white ">
-        <h2 className="mb-4 text-2xl font-semibold leading-tight">
+        <h2 className="mb-4 text-2xl font-semibold leading-tight mt-20">
           Mutual Funds
         </h2>
         <div>
